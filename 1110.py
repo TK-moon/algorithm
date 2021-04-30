@@ -1,24 +1,18 @@
-x = int(input())
-
-origin = x
-
-if x < 10:
-	x = ['0', str(x)]
-else:
-	x = list(str(x))
+origin = x = int(input())
 
 count = 0
 
 while True:
-	y = sum(list(map(int, x)))
-	y = list(str(y))
-	y = y[len(y) - 1]
-	new = str(x[1]) + str(y)
+	i = x // 10
+	j = x % 10
 
-	x = list(map(int, list(str(new))))
+	sum = i + j
 
 	count += 1
 
-	if int(str(x[0]) + str(x[1])) == origin:
+	x = int(str(x % 10) + str(sum % 10))
+
+	if (x == origin):
 		print(count)
 		break
+	
