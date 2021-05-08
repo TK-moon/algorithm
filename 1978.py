@@ -8,8 +8,8 @@ def isPrime(num):
 	if num < 2: return False
 	i = 2
 	isPrime = True
-	while i < number:
-		if number % i == 0:
+	while i < num:
+		if num % i == 0:
 			isPrime = False
 			break
 		i += 1
