@@ -1,5 +1,3 @@
-## 틀린 코드
-
 import sys
 from collections import deque
 input = sys.stdin.readline
@@ -21,15 +19,18 @@ def bfs(x, y):
     [x, y] = queue.popleft()
     # print('call', y, x)
     for i in range(4):
-      x = x + dx[i]
-      y = y + dy[i]
-      over_x = x <= -1 or x >= m
-      over_y = y <= -1 or y >= n
-
-      if not over_x and not over_y and land[y][x] == 1:
-        land[y][x] = 0
+      nx = x + dx[i]
+      ny = y + dy[i]
+      over_x = nx <= -1 or nx >= m
+      over_y = ny <= -1 or ny >= n
+      if over_x or over_y:
+        continue
+      if land[ny][nx] == 0:
+        continue
+      if land[ny][nx] == 1:
+        land[ny][nx] = 0
         # print('push', y, x)
-        queue.append([x, y])
+        queue.append([nx, ny])
   # print()
 
 for _ in range(repeat):
