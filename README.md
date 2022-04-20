@@ -3,6 +3,8 @@
 
 ### 파일 규칙 : /사이트/문제_번호.py
 
+https://solved.ac/profile/tkmoon1020
+
 
 - 2021.04.25  
   알고리즘 공부 시작
