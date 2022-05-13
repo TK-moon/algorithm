@@ -3,11 +3,12 @@ input = sys.stdin.readline
 r = int(input())
 
 s = set()
+reset_set = set(i for i in range(1, 21))
 
 for _ in range(r):
   command = input().strip()
   if command == 'all': 
-    s = set(i for i in range(1, 21))
+    s = reset_set
     continue
   elif command == 'empty':
     s.clear()
