@@ -1,11 +1,13 @@
+import sys
+input = sys.stdin.readline
 r = int(input())
 
-s = []
+s = set()
 
 for _ in range(r):
-  command = input()
+  command = input().strip()
   if command == 'all': 
-    s = [i for i in range(1, 21)]
+    s = set(i for i in range(1, 21))
     continue
   elif command == 'empty':
     s.clear()
@@ -16,11 +18,11 @@ for _ in range(r):
   x = int(x)
 
   if exe == 'add':
-    s.append(x)
+    s.add(x)
   elif exe == 'remove':
-    s.remove(x)
+    s.discard(x)
   elif exe == 'check':
     print(1 if x in s else 0)
   elif exe == 'toggle':
-    if x in s: s.remove(x)
-    else: s.append(x)
+    if x in s: s.discard(x)
+    else: s.add(x)
